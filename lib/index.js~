@@ -37,7 +37,7 @@ router.get('/apps/', function (req, res, next) {
     return next();
   }
 
-  const opts = Object.assign({term: req.query.q}, {num: 200}, req.query);
+  const opts = Object.assign({term: req.query.q}, {num: 20}, req.query);
 
   gplay.search(opts)
     .then((apps) => apps.map(cleanUrls(req)))
